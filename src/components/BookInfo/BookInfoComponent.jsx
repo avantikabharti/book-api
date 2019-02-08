@@ -13,6 +13,7 @@ import "./myApp.css";
     bookWriter,
     description,
     inputChangeHandler,
+    handleKeyPress,
     onBtnClickSearch
   } = props;
   return (
@@ -36,6 +37,7 @@ import "./myApp.css";
           inputPlaceholder="Search Book"
           inputChangeHandler={inputChangeHandler}
           inputValue={searchItem}
+          handleKeyPress={handleKeyPress}
         />
 
         <Button

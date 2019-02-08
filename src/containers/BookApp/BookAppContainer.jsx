@@ -21,6 +21,14 @@ class BookContainer extends Component {
     let inputval = e.target.value;
     inputChangeHandler(inputval);
   }
+  handleKeyPress = e => {
+    let { inputChangeHandler, onBtnClickSearch } = this.props;
+    let inputval = e.target.value;
+    if (e.key === "Enter") {
+      inputChangeHandler(inputval);
+      onBtnClickSearch();
+    }
+  };
 
   render() {
     // console.log("BookContainer", this.props);
@@ -29,6 +37,7 @@ class BookContainer extends Component {
         <BookInfoComponent
           {...this.props}
           inputChangeHandler={this.onInputChangeHandler}
+          handleKeyPress={this.handleKeyPress}
         />
       </div>
     );
@@ -36,14 +45,14 @@ class BookContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("map :- ",state)
+  console.log("map :- ", state);
   // return state
-    return{
+  return {
     imageSrc: getBookImages(state),
     bookTitle: getBookTitle(state),
     bookWriter: getBookWriter(state),
     description: getBookDescription(state)
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

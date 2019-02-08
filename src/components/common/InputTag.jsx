@@ -1,5 +1,5 @@
 import React from "react";
-import propTypes from 'prop-types';
+import propTypes from "prop-types";
 
 const Input = props => (
   <input
@@ -9,12 +9,14 @@ const Input = props => (
     placeholder={props.inputPlaceholder}
     onChange={props.inputChangeHandler}
     className={props.className}
+    onKeyPress={props.handleKeyPress}
   />
 );
 
 Input.propTypes = {
-  inputName:propTypes.string,
-  inputChangeHandler:propTypes.func
-}
+  inputName: propTypes.string,
+  inputChangeHandler: propTypes.func,
+  handleKeyPress: propTypes.func
+};
 
 export default Input;
