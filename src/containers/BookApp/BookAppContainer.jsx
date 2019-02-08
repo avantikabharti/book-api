@@ -26,10 +26,10 @@ class BookContainer extends Component {
     // console.log("BookContainer", this.props);
     return (
       <div>
-        {/* <BookInfoComponent
+        <BookInfoComponent
           {...this.props}
           inputChangeHandler={this.onInputChangeHandler}
-        /> */}
+        />
       </div>
     );
   }
