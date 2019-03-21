@@ -5,7 +5,7 @@ import Image from "../common/ImageTag";
 import Details from "./BookInfo";
 import "./myApp.css";
 
- const BookInfoComponent = () => {
+ const BookInfoComponent = (props) => {
   let {
     searchItem,
     imageSrc,
@@ -13,9 +13,9 @@ import "./myApp.css";
     bookWriter,
     description,
     inputChangeHandler,
+    handleKeyPress,
     onBtnClickSearch
-  } = this.props;
-  console.log(this.props);
+  } = props;
   return (
     <div className="container clearfix">
       <div className="logo-full">
@@ -37,6 +37,7 @@ import "./myApp.css";
           inputPlaceholder="Search Book"
           inputChangeHandler={inputChangeHandler}
           inputValue={searchItem}
+          handleKeyPress={handleKeyPress}
         />
 
         <Button
